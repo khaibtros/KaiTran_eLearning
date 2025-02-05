@@ -5,6 +5,7 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 import { rateLimit } from 'express-rate-limit';
 import { ErrorMiddleware } from "./middleware/error";
+import userRouter from "./routes/user.route";
 
 // body parser
 app.use(express.json({ limit: "50mb" }));
@@ -27,6 +28,12 @@ const limiter = rateLimit({
 	standardHeaders: 'draft-7', 
 	legacyHeaders: false, 
 })
+
+// routes
+app.use(
+  "/api/v1",
+  userRouter
+);
 
 // testing api
 app.get("/test", (req: Request, res: Response, next: NextFunction) => {
