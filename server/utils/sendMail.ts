@@ -23,7 +23,7 @@ const sendMail = async (options: EmailOptions):Promise <void> => {
 
     const {email,subject,template,data} = options;
 
-    // get the pdath to the email template file
+    // get the path to the email template file
     const templatePath = path.join(__dirname,'../mails',template);
 
     // Render the email template with EJS
