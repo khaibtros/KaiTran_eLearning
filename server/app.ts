@@ -3,7 +3,8 @@ import express, { NextFunction, Request, Response } from "express";
 export const app = express();
 import cors from "cors";
 import cookieParser from "cookie-parser";
-import { rateLimit } from 'express-rate-limit'
+import { rateLimit } from 'express-rate-limit';
+import { ErrorMiddleware } from "./middleware/error";
 
 // body parser
 app.use(express.json({ limit: "50mb" }));
@@ -44,3 +45,4 @@ app.all("*", (req: Request, res: Response, next: NextFunction) => {
 
 // middleware calls
 app.use(limiter);
+app.use(ErrorMiddleware);
