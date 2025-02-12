@@ -3,7 +3,8 @@ import {
   registrationUser,
   activateUser,
   loginUser,
-  logoutUser
+  logoutUser,
+  getUserInfo
 } from "../controllers/user.controller";
 import { isAutheticated } from "../middleware/auth";
 
