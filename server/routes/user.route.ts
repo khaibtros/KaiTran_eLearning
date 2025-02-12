@@ -4,7 +4,8 @@ import {
   activateUser,
   loginUser,
   logoutUser,
-  getUserInfo
+  getUserInfo,
+  socialAuth
 } from "../controllers/user.controller";
 import { isAutheticated } from "../middleware/auth";
 
@@ -15,5 +16,6 @@ userRouter.post("/activate-user", activateUser);
 userRouter.post("/login", loginUser);
 userRouter.get("/logout", isAutheticated, logoutUser);
 userRouter.get("/me", isAutheticated, getUserInfo);
+userRouter.post("/socialAuth", socialAuth);
 
 export default userRouter;
