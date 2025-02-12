@@ -6,6 +6,7 @@ import cookieParser from "cookie-parser";
 import { rateLimit } from 'express-rate-limit';
 import { ErrorMiddleware } from "./middleware/error";
 import userRouter from "./routes/user.route";
+import courseRouter from "./routes/course.route";
 
 // body parser
 app.use(express.json({ limit: "50mb" }));
@@ -32,7 +33,8 @@ const limiter = rateLimit({
 // routes
 app.use(
   "/api/v1",
-  userRouter
+  userRouter,
+  courseRouter
 );
 
 // testing api
