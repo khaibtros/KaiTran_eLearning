@@ -341,7 +341,7 @@ export const updatePassword = CatchAsyncError(
 
       await user.save();
 
-      await redis.set(req.user?._id, JSON.stringify(user));
+      await redis.set(req.user?._id as string, JSON.stringify(user));
 
       res.status(201).json({
         success: true,
