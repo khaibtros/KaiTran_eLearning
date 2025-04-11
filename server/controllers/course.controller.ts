@@ -9,6 +9,7 @@ import path from "path";
 import ejs from "ejs";
 import mongoose from "mongoose";
 import sendMail from "../utils/sendMail";
+import NotificationModel from "../models/notification.Model";
 
 // upload course
 export const uploadCourse = CatchAsyncError(
