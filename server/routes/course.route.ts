@@ -10,7 +10,8 @@ import {
   addReplyToReview,
   addReview,
   getAdminAllCourses,
-  deleteCourse
+  deleteCourse,
+  generateVideoUrl
 } from "../controllers/course.controller";
 import { authorizeRoles, isAutheticated } from "../middleware/auth";
 const courseRouter = express.Router();
@@ -54,6 +55,8 @@ courseRouter.put(
   authorizeRoles("admin"),
   addReplyToReview
 );
+
+courseRouter.post("/getVdoCipherOTP", generateVideoUrl);
 
 courseRouter.delete(
   "/delete-course/:id",
