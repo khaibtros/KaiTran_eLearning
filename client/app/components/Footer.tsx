@@ -115,7 +115,7 @@ const Footer = (props: Props) => {
         </div>
         <br />
         <p className="text-center text-black dark:text-white">
-          Copyright © 2023 Elearning | All Rights Reserved
+          Copyright © 2025 Elearning | All Rights Reserved
         </p>
       </div>
       <br />
